@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equipamentos</title>
+</head>
+<body>
+  <h1>maria clara</h1>
+  <script>
+    let equipamentos = [
+      { codigo: 1, nome: "Notebook", preco: 3500 },
+      { codigo: 2, nome: "Impressora", preco: 900 },
+      { codigo: 3, nome: "Scanner", preco: 700 }
+    ];
+
+    equipamentos.push({ codigo: 4, nome: "Monitor", preco: 1200 });
+
+    function exibirEquipamentos() {
+      console.log("Lista de Equipamentos:");
+      equipamentos.forEach(eq => {
+        console.log(`Código: ${eq.codigo}, Nome: ${eq.nome}, Preço: R$ ${eq.preco}`);
+      });
+    }
+
+    function atualizarPreco(percentual) {
+      equipamentos.forEach(eq => {
+        eq.preco += eq.preco * (percentual / 100);
+      });
+    }
+
+    exibirEquipamentos();
+    atualizarPreco(10);
+    console.log("\nApós atualização de preço:");
+    exibirEquipamentos();
+
+    document.body.innerHTML += `<p>Código: ${eq.codigo}, Nome: ${eq.nome}, Preço: R$ ${eq.preco}</p>`;
+
+  </script>
+</body>
+</html>
